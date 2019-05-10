@@ -1,4 +1,4 @@
-# Library
+# Library - my first version of LIBRARY project
 
 Create Library project.
 
