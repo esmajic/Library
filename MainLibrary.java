@@ -35,10 +35,8 @@ public class MainLibrary {
 			option = input.nextInt();
 
 			if (option == 1) {
-				System.out.println("");
-				System.out.println("Creating account...");
-				System.out.println("");
-				System.out.println("Enter account number (up to 4 digits):  ");
+				System.out.println("\nCreating account...");
+				System.out.println("\nEnter account number (up to 4 digits):  ");
 				accountNumber = input.nextInt();
 				input.nextLine();
 				System.out.println("Enter account's owner name:  ");
@@ -46,19 +44,14 @@ public class MainLibrary {
 				System.out.println("Enter number of borrowed books:  ");
 				borrowedBooks = input.nextInt();
 
-				Account racuni = new Account(accountNumber, accountName,
-						borrowedBooks);
+				Account racuni = new Account(accountNumber, accountName, borrowedBooks);
 
 				accounts.add(racuni);
-
 				racuni.toString();
-				System.out.println("");
 
 			} else if (option == 2) {
-				System.out.println("");
-				System.out.println("Creating book number...");
-				System.out.println("");
-				System.out.println("Enter book number:  ");
+				System.out.println("\nCreating book number...");
+				System.out.println("\nEnter book number:  ");
 				bookNumber = input.nextInt();
 				System.out.println("Enter book title:  ");
 				input.nextLine();
@@ -69,47 +62,38 @@ public class MainLibrary {
 				Book knjige = new Book(bookNumber, bookName, bookStatus);
 				books.add(knjige);
 
-				System.out.println("Book with the book number " + bookNumber
+				System.out.println("\nBook with the book number " + bookNumber
 						+ " has been successfully entered in our data base!");
-				System.out.println("");
 
 			} else if (option == 3) {
 
-				System.out.println("Borrowing a book...  ");
-				System.out.println("");
-				System.out.println("Enter book number: ");
+				System.out.println("\nBorrowing a book...  ");
+				System.out.println("\nEnter book number: ");
 				bookNumber = input.nextInt();
 				System.out.println("Enter account number: ");
 				accountNumber = input.nextInt();
-				System.out.println("Enter date:");
+				System.out.println("Enter present date:");
 				date = input.nextLine();
-				System.out.println("");
 
-				BorrowingBooks borrowed = new BorrowingBooks(bookNumber,
-						accountNumber, date);
+				BorrowingBooks borrowed = new BorrowingBooks(bookNumber, accountNumber, date);
 
 				borrowedBook.add(borrowed);
 
-				borrowed.borrowBooks(accounts, books, accountNumber,
-						bookNumber, amountOfBorrowedBooks, date);
-				System.out.println("");
+				borrowed.borrowBooks(accounts, books, accountNumber, bookNumber, amountOfBorrowedBooks, date);
 
 			} else if (option == 4) {
-				System.out.println("List of registered accounts:");
+				System.out.println("\nList of registered accounts:");
 				AccountHandling.listAllAccounts(accounts);
-				System.out.println("");
 
 			} else if (option == 5) {
-				System.out.println("List of registered book titles:");
+				System.out.println("\nList of registered book titles:");
 				BookHandling.listAllBooks(books);
-				System.out.println("");
 
-				System.out.println("");
 			}
 
 		} while (option != 0);
 
-		System.out.println("Thank You for reading our books. Bye bye.");
+		System.out.println("\nThank You for reading our books. Bye bye.");
 		input.close();
 
 	}
