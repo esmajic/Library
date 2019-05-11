@@ -45,8 +45,8 @@ public class Account {
 
 	@Override
 	public String toString() {
-		return "Account [accountNumber=" + accountNumber + ", accountName="
-				+ accountName + ", borrowedBooks=" + borrowedBooks + "]";
+		return "Account [accountNumber=" + accountNumber + ", accountName=" + accountName + ", borrowedBooks="
+				+ borrowedBooks + "]";
 	}
 
 	public boolean isAccountNoNegative(int accountNumber) {
@@ -55,6 +55,5 @@ public class Account {
 		} else
 			return false;
 	}
-	
-}
 
+}

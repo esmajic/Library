@@ -17,12 +17,11 @@ public class MainLibrary {
 
 		do {
 
-			System.out.println("=====================================");
+			System.out.println("\n=====================================");
 			System.out.println("=        Welcome to Library         =");
 			System.out.println("=====================================");
-			System.out.println("");
-
-			System.out.println("Select 1 to create new account ");
+			
+			System.out.println("\nSelect 1 to create new account ");
 			System.out.println("Select 2 to register book");
 			System.out.println("Select 3 to borrow book");
 			System.out.println("Select 4 to list all accounts");
@@ -45,7 +44,6 @@ public class MainLibrary {
 				borrowedBooks = input.nextInt();
 
 				Account racuni = new Account(accountNumber, accountName, borrowedBooks);
-
 				accounts.add(racuni);
 				racuni.toString();
 

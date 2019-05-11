@@ -9,8 +9,7 @@ public class AccountHandling extends Account {
 
 	Account account1 = new Account();
 
-	public boolean isAccountNoUnique(int accountNumber,
-			ArrayList<Account> accounts) {
+	public boolean isAccountNoUnique(int accountNumber, ArrayList<Account> accounts) {
 		for (int i = 0; i < accounts.size(); i++) {
 			while (accounts.get(i).getAccountNumber() == accountNumber) {
 				return true;
@@ -19,8 +18,7 @@ public class AccountHandling extends Account {
 		return false;
 	}
 
-	public static boolean isAccountNumber(int accountNumber,
-			ArrayList<Account> accounts) {
+	public static boolean isAccountNumber(int accountNumber, ArrayList<Account> accounts) {
 		for (int i = 0; i < accounts.size(); i++) {
 			if (accounts.get(i).getAccountNumber() == accountNumber) {
 				return false;
@@ -29,8 +27,7 @@ public class AccountHandling extends Account {
 		return true;
 	}
 
-	public static int getAccountNumberIndex(int accountNumber,
-			ArrayList<Account> accounts) {
+	public static int getAccountNumberIndex(int accountNumber, ArrayList<Account> accounts) {
 		int i;
 		for (i = 0; i < accounts.size(); i++) {
 			if (accounts.get(i).getAccountNumber() == accountNumber) {
@@ -42,8 +39,8 @@ public class AccountHandling extends Account {
 
 	public static void listAllAccounts(ArrayList<Account> accounts) {
 		for (int i = 0; i < accounts.size(); i++) {
-			System.out.println("* " + accounts.get(i).getAccountNumber() + ", "
-					+ accounts.get(i).getAccountName() + " *");
+			System.out.println(
+					"* " + accounts.get(i).getAccountNumber() + ", " + accounts.get(i).getAccountName() + " *");
 		}
 
 	}

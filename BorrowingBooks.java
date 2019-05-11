@@ -5,9 +5,7 @@ public class BorrowingBooks {
 	private String date;
 	private int bookNumber;
 	private int accountNumber;
-	
-	
-	
+
 	BorrowingBooks() {
 
 	}
@@ -18,7 +16,6 @@ public class BorrowingBooks {
 		this.date = date;
 
 	}
-	
 
 	public int getBookNumber() {
 		return bookNumber;
@@ -44,43 +41,25 @@ public class BorrowingBooks {
 		this.date = date;
 	}
 
-	public void borrowBooks(ArrayList<Account> accounts, ArrayList<Book> books,
-			int accountNumber, int bookNumber, int amountOfBorrowedBooks, String date) {
+	public void borrowBooks(ArrayList<Account> accounts, ArrayList<Book> books, int accountNumber, int bookNumber,
+			int amountOfBorrowedBooks, String date) {
 		if (AccountHandling.isAccountNumber(accountNumber, accounts)) {
-			System.out
-					.println("Account does not exist in our accounts data base! Please, try again.");
-			System.out.println("");
+			System.out.println("\nAccount does not exist in our accounts data base! Please, try again.");
 		} else if (BookHandling.isBookNumber(bookNumber, books)) {
-			System.out
-					.println("Book number does not exist in our books data base! Please, try again.");
-			System.out.println("");
+			System.out.println("\nBook number does not exist in our books data base! Please, try again.");
 		} else if (BookHandling.isBookAvailable(bookNumber, books)) {
-			System.out
-					.println("Presently, book is not available. Please, try another book.");
-			System.out.println("");
-		} else if (accounts.get(
-				AccountHandling.getAccountNumberIndex(accountNumber, accounts))
+			System.out.println("\nPresently, book is not available. Please, try another book.");
+		} else if (accounts.get(AccountHandling.getAccountNumberIndex(accountNumber, accounts))
 				.getBorrowedBooks() >= 3) {
-			System.out
-					.println("Three books have already been borrowed. Limit has been reached. Return books.");
-			System.out.println("");
+			System.out.println("\nThree books have already been borrowed. Limit has been reached. Return books.");
 		} else {
-			books.get(BookHandling.getBookNumberIndex(bookNumber, books))
-					.setBookAvailable(false);
-			accounts.get(
-					AccountHandling.getAccountNumberIndex(accountNumber,
-							accounts)).setBorrowedBooks(
-					amountOfBorrowedBooks + 1);
-			System.out
-					.println("Book is successfully issued to member with account number "
-							+ accountNumber);
-			System.out.println("");
+			books.get(BookHandling.getBookNumberIndex(bookNumber, books)).setBookAvailable(false);
+			accounts.get(AccountHandling.getAccountNumberIndex(accountNumber, accounts))
+					.setBorrowedBooks(amountOfBorrowedBooks + 1);
+			System.out.println("\nBook is successfully issued to member with account number " + accountNumber);
 			amountOfBorrowedBooks++;
-			System.out.println("Status of borrowed books is:  "
-					+ amountOfBorrowedBooks);
-			System.out.println("");
+			System.out.println("\nStatus of borrowed books is:  " + amountOfBorrowedBooks);
 		}
 
 	}
 }
-

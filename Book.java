@@ -45,8 +45,7 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "Book [bookNumber=" + bookNumber + ", bookName=" + bookName
-				+ ", bookAvailable=" + bookAvailable + "]";
+		return "Book [bookNumber=" + bookNumber + ", bookName=" + bookName + ", bookAvailable=" + bookAvailable + "]";
 	}
 
 	public boolean isBookNoNegative(int bookNumber) {
